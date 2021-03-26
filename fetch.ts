@@ -13,3 +13,8 @@ const response = await fetch(url);
 const data = await response.json();
 
 console.log(data);
+
+await Deno.writeFile(
+  "data.json",
+  new TextEncoder().encode(JSON.stringify(data))
+);
